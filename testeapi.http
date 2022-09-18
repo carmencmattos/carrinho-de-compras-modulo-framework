@@ -1,0 +1,182 @@
+
+# Criar usuário 1
+POST http://127.0.0.1:8000/usuario HTTP/1.1
+content-type: application/json
+
+{
+    "id": 1,
+    "nome": "teste1",
+    "email": "teste@gmail.com",
+    "senha": "1234"
+}
+
+#######################################
+# Criar usuário 2
+POST http://127.0.0.1:8000/usuario HTTP/1.1
+content-type: application/json
+
+{
+    "id": 2,
+    "nome": "teste2",
+    "email": "teste@gmail.com",
+    "senha": "1234"
+}
+
+#######################################
+# Criar usuário 3
+POST http://127.0.0.1:8000/usuario HTTP/1.1
+content-type: application/json
+
+{
+    "id": 3,
+    "nome": "teste3",
+    "email": "teste@gmail.com",
+    "senha": "1234"
+}
+
+
+#######################################
+# Pegar usuário pelo id
+GET http://127.0.0.1:8000/usuario/3 HTTP/1.1
+content-type: application/json
+
+
+#######################################
+# Pegar usuário pelo nome
+GET http://127.0.0.1:8000/usuario?nome=teste1 HTTP/1.1
+content-type: application/json
+
+
+#######################################
+# Deletar usuário pelo id
+DELETE http://127.0.0.1:8000/usuario/3 HTTP/1.1
+content-type: application/json
+
+
+#######################################
+############  endereço  ###############
+#######################################
+
+#######################################
+# Criar endereço usuario 1
+POST http://127.0.0.1:8000/endereco/ HTTP/1.1
+content-type: application/json
+
+{
+    "id_usuario": 2,
+    "rua": "Rua Luiza Code",
+    "cep": "99999-888",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ"
+}
+
+#######################################
+# Criar outro endereço usuario 1
+POST http://127.0.0.1:8000/endereco/ HTTP/1.1
+content-type: application/json
+
+{
+    "id_usuario": 2,
+    "rua": "Rua Ladrilhada",
+    "cep": "99999-999",
+    "cidade": "São Paulo",
+    "estado": "SP"
+}
+
+
+#######################################
+# Pegar endereço do usuario
+GET http://127.0.0.1:8000/usuario/1/enderecos HTTP/1.1
+content-type: application/json
+
+
+#######################################
+# Deletar endereço
+DELETE http://127.0.0.1:8000/endereco/1 HTTP/1.1
+content-type: application/json
+
+
+#######################################
+############  produto  ################
+#######################################
+
+#######################################
+# Criar produto 1
+POST http://127.0.0.1:8000/produto HTTP/1.1
+content-type: application/json
+
+{
+    "id": 1,
+    "nome": "Sorvete",
+    "descricao": "Doce gelado",
+    "preco": 9.99
+}
+
+
+#######################################
+# Criar produto 2
+POST http://127.0.0.1:8000/produto HTTP/1.1
+content-type: application/json
+
+{
+    "id": 2,
+    "nome": "Chocolate",
+    "descricao": "Fernando Roche",
+    "preco": 5.99
+}
+
+
+#######################################
+# Buscar produtos
+GET http://127.0.0.1:8000/produto HTTP/1.1
+content-type: application/json
+
+
+#######################################
+# DELETE produtos
+DELETE http://127.0.0.1:8000/produto/2 HTTP/1.1
+content-type: application/json
+
+
+#######################################
+############  carrinho  ################
+#######################################
+
+#######################################
+# Adicionar produto ao carrinho
+POST http://127.0.0.1:8000/carrinho/1/2 HTTP/1.1
+content-type: application/json
+
+
+#######################################
+# Pegar carrinho de compras
+GET http://127.0.0.1:8000/carrinho/1 HTTP/1.1
+content-type: application/json
+
+
+#######################################
+# Remover produto do carrinho de compras
+DELETE http://127.0.0.1:8000/carrinho/1/produto/2 HTTP/1.1
+content-type: application/json
+
+
+#######################################
+# Pegar o total do carrinho de compras
+GET http://127.0.0.1:8000/carrinho/1/total HTTP/1.1
+content-type: application/json
+
+
+#######################################
+# Deletar carrinho de compras
+DELETE http://127.0.0.1:8000/carrinho/1 HTTP/1.1
+content-type: application/json
+
+
+#######################################
+############  saudação  ################
+#######################################
+
+#######################################
+# saudação de boas vindas
+GET http://127.0.0.1:8000/ HTTP/1.1
+content-type: application/json
